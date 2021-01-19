@@ -2,6 +2,16 @@
 
 let geohash;
 
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+
 function getLocation() { 
 
     // check to make sure geolocation is possible
@@ -89,7 +99,7 @@ function getEvents() {
         var eventList = json._embedded.events.map((individualEvent) => {
             return `<div>
                         <ul>
-                            <li><img src="${individualEvent.images[0].url}" /></li>  
+                            <li ><img src="${individualEvent.images[0].url}" /></li>  
                             <li>Name: ${individualEvent.name}</li>
                             <li>Date: ${individualEvent.dates.start.localDate}</li>
                             <li>Time: ${individualEvent.dates.start.localTime}</li>
