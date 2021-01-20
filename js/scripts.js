@@ -1,6 +1,9 @@
 'use strict';
 let geohash;
-function getLocation() {
+
+
+function getLocation() { 
+
     // check to make sure geolocation is possible
     if (navigator.geolocation) {
     var options = {
@@ -48,18 +51,25 @@ function getLocation() {
         }
         else {
             console.log("server error");
+            window.alert("Unable to get your location. Please make sure your browser's location setting is enabled.")
         }
     };
     request.onerror = function() {
       // There was a connection error of some sort
-      console.log("unable to connect to server");
+    console.log("unable to connect to server");
+    window.alert("Unable to get your location. Please make sure your browser's location setting is enabled.")
     };
     request.send();  // make the request
-}
+};
+
 locationButton.addEventListener("click", function (event) {
     event.preventDefault(); //prevents submit action which would reload page
     getLocation();
 });
+
+
+
+
 function getEvents() {
     const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=kPwc8hRP4lHymySkz8uZDaL5OUA2dXYh&geoPoint=${geohash}&radius=20`;
     const events = document.createElement('div')
@@ -70,8 +80,8 @@ function getEvents() {
     .then(function (json) {
         json._embedded.events.map((individualEvent) => {
         const eventCard = document.createElement('ul')
-        const eventDetails = `
-                            <li><img src="${individualEvent.images[1].url}" /></li>
+        const eventDetails = `                       
+                            <li><img src="${individualEvent.images[1].url}" /></li>  
                             <li>Name: ${individualEvent.name}</li>
                             <li>Date: ${individualEvent.dates.start.localDate}</li>
                             <li>Time: ${individualEvent.dates.start.localTime}</li>
@@ -79,13 +89,21 @@ function getEvents() {
         eventCard.innerHTML = eventDetails;
         events.appendChild(eventCard);
         });
-    document.getElementById("output").append(events);
+    document.getElementById("output").append(events);  
     });
+
 };
+
+
 eventsButton.addEventListener("click", function (event) {
     event.preventDefault(); //prevents submit action which would reload page
     getEvents();
 });
+
+
+
+
+
 function getSports() {
     const url = `https://app.ticketmaster.com/discovery/v2/events?apikey=kPwc8hRP4lHymySkz8uZDaL5OUA2dXYh&classificationId=KZFzniwnSyZfZ7v7nE&geoPoint=${geohash}&radius=20`;
     const events = document.createElement('div')
@@ -96,8 +114,8 @@ function getSports() {
     .then(function (json) {
         json._embedded.events.map((individualEvent) => {
         const eventCard = document.createElement('ul')
-        const eventDetails = `
-                            <li><img src="${individualEvent.images[1].url}" /></li>
+        const eventDetails = `                       
+                            <li><img src="${individualEvent.images[1].url}" /></li>  
                             <li>Name: ${individualEvent.name}</li>
                             <li>Date: ${individualEvent.dates.start.localDate}</li>
                             <li>Time: ${individualEvent.dates.start.localTime}</li>
@@ -105,7 +123,7 @@ function getSports() {
         eventCard.innerHTML = eventDetails;
         events.appendChild(eventCard);
         });
-    document.getElementById("output").append(events);
+    document.getElementById("output").append(events);  
     });
 };
 sportsButton.addEventListener("click", function (event) {
@@ -122,8 +140,8 @@ function getMusic() {
     .then(function (json) {
         json._embedded.events.map((individualEvent) => {
         const eventCard = document.createElement('ul')
-        const eventDetails = `
-                            <li><img src="${individualEvent.images[1].url}" /></li>
+        const eventDetails = `                       
+                            <li><img src="${individualEvent.images[1].url}" /></li>  
                             <li>Name: ${individualEvent.name}</li>
                             <li>Date: ${individualEvent.dates.start.localDate}</li>
                             <li>Time: ${individualEvent.dates.start.localTime}</li>
@@ -131,13 +149,18 @@ function getMusic() {
         eventCard.innerHTML = eventDetails;
         events.appendChild(eventCard);
         });
-    document.getElementById("output").append(events);
+    document.getElementById("output").append(events);  
     });
 };
 musicButton.addEventListener("click", function (event) {
     event.preventDefault(); //prevents submit action which would reload page
     getMusic();
 });
+
+
+
+
+
 function getArtsTheatre() {
     const url = `https://app.ticketmaster.com/discovery/v2/events?apikey=kPwc8hRP4lHymySkz8uZDaL5OUA2dXYh&classificationId=KZFzniwnSyZfZ7v7na&geoPoint=${geohash}&radius=20`;
     const events = document.createElement('div')
@@ -148,8 +171,8 @@ function getArtsTheatre() {
     .then(function (json) {
         json._embedded.events.map((individualEvent) => {
         const eventCard = document.createElement('ul')
-        const eventDetails = `
-                            <li><img src="${individualEvent.images[1].url}" /></li>
+        const eventDetails = `                       
+                            <li><img src="${individualEvent.images[1].url}" /></li>  
                             <li>Name: ${individualEvent.name}</li>
                             <li>Date: ${individualEvent.dates.start.localDate}</li>
                             <li>Time: ${individualEvent.dates.start.localTime}</li>
@@ -157,13 +180,17 @@ function getArtsTheatre() {
         eventCard.innerHTML = eventDetails;
         events.appendChild(eventCard);
         });
-    document.getElementById("output").append(events);
+    document.getElementById("output").append(events);  
     });
 };
 artsTheatreButton.addEventListener("click", function (event) {
     event.preventDefault(); //prevents submit action which would reload page
     getArtsTheatre();
 });
+
+
+
+
 function getMiscellaneous() {
     const url = `https://app.ticketmaster.com/discovery/v2/events?apikey=kPwc8hRP4lHymySkz8uZDaL5OUA2dXYh&classificationId=KZFzniwnSyZfZ7v7n1&geoPoint=${geohash}&radius=20`;
     const events = document.createElement('div')
@@ -174,8 +201,8 @@ function getMiscellaneous() {
     .then(function (json) {
         json._embedded.events.map((individualEvent) => {
         const eventCard = document.createElement('ul')
-        const eventDetails = `
-                            <li><img src="${individualEvent.images[1].url}" /></li>
+        const eventDetails = `                       
+                            <li><img src="${individualEvent.images[1].url}" /></li>  
                             <li>Name: ${individualEvent.name}</li>
                             <li>Date: ${individualEvent.dates.start.localDate}</li>
                             <li>Time: ${individualEvent.dates.start.localTime}</li>
@@ -183,7 +210,7 @@ function getMiscellaneous() {
         eventCard.innerHTML = eventDetails;
         events.appendChild(eventCard);
         });
-    document.getElementById("output").prepend(events);
+    document.getElementById("output").prepend(events);  
     });
 };
 miscellaneousButton.addEventListener("click", function (event) {
