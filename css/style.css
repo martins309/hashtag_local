@@ -34,14 +34,41 @@ main {
 
 
   button {
+    background-color: rgb(255, 153, 0);
+    display: inline-block;
+    box-shadow: 0 8px 16px 0 rgba(red, green, blue, alpha);
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
     font-size: 28px;
   }
-  
 
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .output {
+    color: rgb(64, 226, 43);
+    background-color: navy;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+  }
+  
+.output img {
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 10px 10px;
+  
+}
+.output button {
+  background-color: rgb(230, 30, 57);
+}
  
   
 
