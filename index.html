@@ -7,34 +7,27 @@
         <title>Local Feed</title>
     </head>
     <body>
-        <main>
             <header>
-                <div id="myNav" class="overlay">
-
-                    <!-- Button to close the overlay navigation -->
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                  
-                    <!-- Overlay content -->
-                    <div class="overlay-content">
-                      <a href="#">About</a>
-                      <a href="#">Services</a>
-                      <a href="#">Clients</a>
-                      <a href="#">Contact</a>
-                    </div>
-                  
-                  </div>
-                  
-                  <!-- Use any element to open/show the overlay navigation menu -->
-                  <span onclick="openNav()">Menu</span>
+                <div class="container">
+                    
+                </div>
                 <h1 class="site-title">Location-Based Events</h1>
                 <button type="submit" id= "locationButton">Get my location</button><br/>
                     <p id = "status"></p>
                     <a id = "map-link" target="_blank"></a>
-                <button type="submit" id="eventsButton">Events</button> 
-                <button type="submit" id="musicButton">Music</button>
-                <button type="submit" id="sportsButton">Sports</button>
+                <div class="all-buttons">
+                    <ul>
+                    <li><button type="submit" id="eventsButton" class="events-button">Events</button></li>
+                    <li><button type="submit" id="musicButton" class="music-buttob">Music</button></li>
+                    <li><button type="submit" id="sportsButton" class="sport-button">Sports</button></li>
+                    <li><button type="submit" id="artsTheatreButton" class="artstheater-button">Arts & Theatre</button></li>
+                    <li><button type="submit" id="miscellaneousButton" class="miscellaneous-button">Miscellaneous</button></li>
+                    </ul>
+                </div>
+        <main>
+       
             </header>
-            <div id="output"></div>
+            <div id="output" class="output"></div>
         </main>    
     </body>
 <script src="js/scripts.js"></script>
