@@ -15,14 +15,7 @@ html {
     font-size: 16px;
     box-sizing: border-box;
     color: white;
-    background-image: url(“../../images/atlanta.jpg”);
-    /* background-image: url(“../images/atlanta.jpg”);
-    background-repeat: no-repeat; */
     height: 100%;
-}
-
-body {
-    background-color: #333333;
 }
   
 *,
@@ -31,16 +24,8 @@ body {
     box-sizing: inherit;
 }
 
-main {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
-    margin: 0 auto;
-    align-items: center;
-    flex-grow: 1;
-    flex-shrink: 0;
-    flex-basis: 320px;    
+body{
+    background-image: url("../images/atlanta.jpg")
 }
 
 .all-buttons ul{
@@ -70,7 +55,7 @@ main {
         overflow: auto;
 }
 
-button {
+button, .button {
     padding-top: 18px;
     padding-right: 18px;
     padding-bottom: 18px;
@@ -81,9 +66,21 @@ button {
     transition-duration: 0.4s;
 }
 
-button:hover{
+button:hover, .button:hover {
     background-color: #9494B8;
 }
+
+.output {
+    display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      justify-content: center;
+      margin: 0 auto;
+      align-items: center;
+      flex-grow: 1;
+      flex-shrink: 0;
+      flex-basis: 640px;
+  }
 
 .output ul {
     width: 100%;
@@ -98,7 +95,7 @@ button:hover{
     border-radius: 20px;
     background-color: navy;
     margin-bottom: 25px;
-    font-family:
+    
   }
 
 .output img {
@@ -115,7 +112,7 @@ button:hover{
 }
 .output li:nth-child(2) {
     font-weight: bold;
-    font-family: fantasy
+    font-family: fantasy;
     font-size: 16px;
     color: whitesmoke;
 }
